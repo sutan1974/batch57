@@ -1,0 +1,16 @@
+age,gender,education,experience_years,monthly_target,target_achievement,working_hours_per_week,overtime_hours_per_week,salary,commission_rate,job_satisfaction,work_location,manager_support_score,company_tenure_years,marital_status,distance_to_office_km
+28,Female,Bachelor,3,120,0.85,40,8,55000,0.05,7,Urban,8,2.5,Single,15
+35,Male,Diploma,8,150,0.65,45,12,75000,0.08,4,Suburban,5,3.2,Married,35
+42,Female,High School,15,100,0.95,38,5,48000,0.03,8,Rural,9,8.5,Married,8
+29,Male,Bachelor,4,130,0.70,42,10,62000,0.06,5,Urban,6,1.8,Single,25
+38,Female,Diploma,10,140,0.80,40,6,68000,0.07,6,Suburban,7,4.5,Married,20
+31,Male,High School,6,110,0.60,44,14,52000,0.04,3,Urban,4,2.1,Single,45
+45,Female,Bachelor,12,160,0.90,39,4,82000,0.09,9,Suburban,8,6.8,Married,12
+26,Male,Diploma,2,90,0.75,41,9,45000,0.05,6,Urban,7,1.2,Single,30
+33,Female,High School,7,125,0.55,46,16,58000,0.06,4,Suburban,5,3.5,Married,40
+39,Male,Bachelor,9,145,0.85,40,7,72000,0.08,7,Urban,8,5.2,Married,18
+27,Female,Diploma,3,105,0.70,43,11,50000,0.05,5,Suburban,6,1.8,Single,28
+36,Male,High School,11,135,0.80,41,8,65000,0.07,6,Rural,7,4.8,Married,15
+30,Female,Bachelor,5,115,0.65,42,12,57000,0.06,4,Urban,5,2.3,Single,35
+41,Male,Diploma,13,155,0.95,38,3,78000,0.08,8,Suburban,9,7.2,Married,10
+34,Female,High School,8,120,0.75,40,9,60000,0.06,6,Urban,7,3.8,Married,22
