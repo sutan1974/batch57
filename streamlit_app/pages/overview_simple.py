@@ -1,10 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib
-matplotlib.use('Agg')  # Use non-interactive backend for Streamlit Cloud
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 def show():
     st.markdown("## 📈 Model Performance & Business Insights")
@@ -59,22 +55,8 @@ def show():
     
     df_importance = pd.DataFrame(feature_importance)
     
-    # Create horizontal bar chart using matplotlib
-    plt.figure(figsize=(10, 8))
-    bars = plt.barh(df_importance['Feature'], df_importance['Importance'], color='skyblue')
-    plt.xlabel('Importance')
-    plt.ylabel('Features')
-    plt.title('Feature Importance from RandomForest Model')
-    plt.gca().invert_yaxis()  # Invert y-axis to show highest importance at top
-    
-    # Add value labels on bars
-    for i, bar in enumerate(bars):
-        width = bar.get_width()
-        plt.text(width + 0.001, bar.get_y() + bar.get_height()/2, 
-                f'{width:.3f}', ha='left', va='center')
-    
-    plt.tight_layout()
-    st.pyplot(plt)
+    # Display as a table instead of chart
+    st.dataframe(df_importance, use_container_width=True)
     
     st.markdown("---")
     
@@ -89,18 +71,10 @@ def show():
             'Category': ['Loyal', 'At Risk', 'Potential Churn'],
             'Count': [74, 126, 0],  # Based on test set results
             'Percentage': [37, 63, 0],
-            'Color': ['#2ca02c', '#ff7f0e', '#d62728']
         }
         
         df_risk = pd.DataFrame(risk_data)
-        
-        # Create pie chart using matplotlib
-        plt.figure(figsize=(8, 6))
-        colors = ['#2ca02c', '#ff7f0e', '#d62728']
-        plt.pie(df_risk['Count'], labels=df_risk['Category'], autopct='%1.1f%%', 
-                colors=colors, startangle=90)
-        plt.title('Employee Risk Distribution')
-        st.pyplot(plt)
+        st.dataframe(df_risk, use_container_width=True)
     
     with col2:
         st.markdown("### 🎯 Model Performance Metrics")
@@ -112,23 +86,7 @@ def show():
         }
         
         df_metrics = pd.DataFrame(metrics_data)
-        
-        # Create bar chart using matplotlib
-        plt.figure(figsize=(8, 6))
-        bars = plt.bar(df_metrics['Metric'], df_metrics['Value'], color='lightcoral')
-        plt.xlabel('Metrics')
-        plt.ylabel('Value')
-        plt.title('Model Performance Metrics')
-        plt.xticks(rotation=45)
-        
-        # Add value labels on bars
-        for bar in bars:
-            height = bar.get_height()
-            plt.text(bar.get_x() + bar.get_width()/2., height + 0.01,
-                    f'{height:.3f}', ha='center', va='bottom')
-        
-        plt.tight_layout()
-        st.pyplot(plt)
+        st.dataframe(df_metrics, use_container_width=True)
     
     st.markdown("---")
     
@@ -173,49 +131,7 @@ def show():
     }
     
     df_bias = pd.DataFrame(bias_data)
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.markdown("#### Performance by Gender")
-        gender_bias = df_bias[df_bias['Demographic'].isin(['Female', 'Male'])]
-        # Create bar chart using matplotlib
-        plt.figure(figsize=(6, 4))
-        bars = plt.bar(gender_bias['Demographic'], gender_bias['F2-Score'], 
-                      color=['lightgreen', 'lightblue'])
-        plt.xlabel('Gender')
-        plt.ylabel('F2-Score')
-        plt.title('F2-Score by Gender')
-        
-        # Add value labels
-        for bar in bars:
-            height = bar.get_height()
-            plt.text(bar.get_x() + bar.get_width()/2., height + 0.01,
-                    f'{height:.3f}', ha='center', va='bottom')
-        
-        plt.tight_layout()
-        st.pyplot(plt)
-    
-    with col2:
-        st.markdown("#### Performance by Education")
-        edu_bias = df_bias[df_bias['Demographic'].isin(['Bachelor', 'Diploma', 'High School'])]
-        # Create bar chart using matplotlib
-        plt.figure(figsize=(6, 4))
-        bars = plt.bar(edu_bias['Demographic'], edu_bias['F2-Score'], 
-                      color=['lightcoral', 'lightgreen', 'lightblue'])
-        plt.xlabel('Education Level')
-        plt.ylabel('F2-Score')
-        plt.title('F2-Score by Education Level')
-        plt.xticks(rotation=45)
-        
-        # Add value labels
-        for bar in bars:
-            height = bar.get_height()
-            plt.text(bar.get_x() + bar.get_width()/2., height + 0.01,
-                    f'{height:.3f}', ha='center', va='bottom')
-        
-        plt.tight_layout()
-        st.pyplot(plt)
+    st.dataframe(df_bias, use_container_width=True)
     
     st.markdown("---")
     

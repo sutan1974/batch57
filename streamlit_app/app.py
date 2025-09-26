@@ -3,7 +3,12 @@ import pandas as pd
 import numpy as np
 import pickle
 import os
-from pages import overview, predictor
+
+# Try to import with matplotlib, fallback to simple version
+try:
+    from pages import overview, predictor
+except ImportError:
+    from pages import overview_simple as overview, predictor
 
 # Page configuration
 st.set_page_config(
