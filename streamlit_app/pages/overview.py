@@ -95,7 +95,7 @@ def show():
         df_risk = pd.DataFrame(risk_data)
         
         # Create pie chart using matplotlib
-        plt.figure(figsize=(8, 4))
+        plt.figure(figsize=(8, 6))
         colors = ['#2ca02c', '#ff7f0e', '#d62728']
         plt.pie(df_risk['Count'], labels=df_risk['Category'], autopct='%1.1f%%', 
                 colors=colors, startangle=90)
