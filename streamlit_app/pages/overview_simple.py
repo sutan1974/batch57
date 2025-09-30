@@ -70,7 +70,7 @@ def show():
         risk_data = {
             'Category': ['Loyal', 'At Risk', 'Potential Churn'],
             'Count': [74, 126, 0],  # Based on test set results
-            'Percentage': [37, 63, 0],
+            'Percentage': [48, 26, 26],
         }
         
         df_risk = pd.DataFrame(risk_data)
