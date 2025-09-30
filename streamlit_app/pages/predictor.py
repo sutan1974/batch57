@@ -199,7 +199,7 @@ def display_results(predictions, recommendations, original_data):
         risk_counts = pd.Series(predictions['risk_categories']).value_counts()
         
         # Create pie chart using matplotlib
-        plt.figure(figsize=(8, 6))
+        plt.figure(figsize=(6, 6))
         colors = ['#2ca02c', '#ff7f0e', '#d62728']
         plt.pie(risk_counts.values, labels=risk_counts.index, autopct='%1.1f%%', 
                 colors=colors, startangle=90)
