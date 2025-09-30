@@ -88,7 +88,7 @@ def show():
         risk_data = {
             'Category': ['Loyal', 'At Risk', 'Potential Churn'],
             'Count': [3, 8, 4],  # Based on test set results
-            'Percentage': [26, 48, 26],
+            'Percentage': [20, 53, 27],
             'Color': ['#2ca02c', '#ff7f0e', '#d62728']
         }
         
