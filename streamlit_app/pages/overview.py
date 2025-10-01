@@ -114,7 +114,7 @@ def show():
         df_metrics = pd.DataFrame(metrics_data)
         
         # Create bar chart using matplotlib
-        plt.figure(figsize=(8, 6))
+        plt.figure(figsize=(8, 8))
         bars = plt.bar(df_metrics['Metric'], df_metrics['Value'], color='lightcoral')
         plt.xlabel('Metrics')
         plt.ylabel('Value')
